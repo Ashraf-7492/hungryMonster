@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resturant Food Search</title>
+   
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+     <!-- icon -->
+      <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" rel="stylesheet" /> -->
+     <link rel="stylesheet" href="icon/all.css">
+     <!-- custom Style -->
+     <link rel="stylesheet" href="style.css">
+    <!-- font source -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light ">
+            <div class="container-fluid">
+            <div id="logo">  <a class="navbar-brand" href="#">
+                <img src="images/logo.png" width="100px" height="100px" alt="Hungry Search Now">
+            </a></div>
+              <div ><h1 id="brandName">Hungry Monster</h1></div>
+             <div id="menuName"> <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Recepie</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link " href="#" tabindex="-1" >Blog</a>
+                  </li>
+                </ul>
+              </div></div>
+            </div>
+          </nav>
+    </div>
+    <main>
+        <div class="search-bar col-md-6 mx-auto">
+            
+            <div class="search-box my-5">
+                <input  type="text" class="form-control " id="searchInput" placeholder="Enter your Food Names First Letter">
+                <button onclick="displayMenuList()" class="btn btn-success search-btn searchItem">Search</button>
+            </div>
+        </div>
+        <div id="searchResultContainer">
+
+        </div>
+        <div id="showDetailsMenu" class="col-md-4">
+            
+
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
