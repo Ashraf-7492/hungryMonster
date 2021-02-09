@@ -1,14 +1,25 @@
-    const displayMenuList = () => {
+    const displayMenuList = async () => {
     const getInputValue = document.getElementById('searchInput').value;
 
     const url = `https://www.themealdb.com/api/json/v1/1/search.php?f=${ getInputValue}`
-    fetch(url)
-    .then(response => response.json())
-    .then(data => mealName(data.meals));
+    try{
+        const res = await fetch(url);
+        const data = await res.json();
+        mealName(data.meals);
+    }
+    catch(error){
+        errorMessage('Sorry , Did not find your request');
+    }
+    
+
+
+    // .then(response => response.json())
+    // .then(data => mealName(data.meals));
 }
 // show menu list
 const mealName = meals => {
     const searchResult = document.getElementById('searchResultContainer');
+    searchResult.innerHTML = '';
 
     meals.forEach(element => {
         const mealList = document.createElement('div');
@@ -62,4 +73,8 @@ const showFullDetails = meals => {
         displayHide.style.display = 'none';
         const displayHideDetails = document.getElementById('showDetailsMenu');
         displayHideDetails.style.display = 'block';
+}
+const errorMessage = error =>{
+    const displayError = document.getElementById('errorMessage1');
+    displayError.innerText = error;
 }
